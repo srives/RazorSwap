@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Swap));
             panel1 = new Panel();
+            cbPipe = new CheckBox();
+            cbRod = new CheckBox();
+            cbUnitstrut = new CheckBox();
             label2 = new Label();
             label1 = new Label();
             button1 = new Button();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
-            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -43,16 +44,56 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(cbPipe);
+            panel1.Controls.Add(cbRod);
+            panel1.Controls.Add(cbUnitstrut);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(-4, -6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(479, 341);
+            panel1.Size = new Size(479, 526);
             panel1.TabIndex = 0;
+            // 
+            // cbPipe
+            // 
+            cbPipe.AutoSize = true;
+            cbPipe.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbPipe.ForeColor = Color.FromArgb(0, 192, 0);
+            cbPipe.Location = new Point(180, 246);
+            cbPipe.Name = "cbPipe";
+            cbPipe.Size = new Size(88, 41);
+            cbPipe.TabIndex = 12;
+            cbPipe.Text = "Pipe";
+            cbPipe.UseVisualStyleBackColor = true;
+            cbPipe.CheckedChanged += cbPipe_CheckedChanged;
+            // 
+            // cbRod
+            // 
+            cbRod.AutoSize = true;
+            cbRod.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbRod.ForeColor = Color.FromArgb(0, 192, 0);
+            cbRod.Location = new Point(181, 199);
+            cbRod.Name = "cbRod";
+            cbRod.Size = new Size(83, 41);
+            cbRod.TabIndex = 11;
+            cbRod.Text = "Rod";
+            cbRod.UseVisualStyleBackColor = true;
+            cbRod.CheckedChanged += cbRod_CheckedChanged;
+            // 
+            // cbUnitstrut
+            // 
+            cbUnitstrut.AutoSize = true;
+            cbUnitstrut.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbUnitstrut.ForeColor = Color.FromArgb(0, 192, 0);
+            cbUnitstrut.Location = new Point(180, 152);
+            cbUnitstrut.Name = "cbUnitstrut";
+            cbUnitstrut.Size = new Size(130, 41);
+            cbUnitstrut.TabIndex = 10;
+            cbUnitstrut.Text = "Unistrut";
+            cbUnitstrut.UseVisualStyleBackColor = true;
+            cbUnitstrut.CheckedChanged += cbUnitstrut_CheckedChanged;
             // 
             // label2
             // 
@@ -80,7 +121,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(255, 255, 192);
-            button1.Location = new Point(172, 144);
+            button1.Location = new Point(181, 345);
             button1.Name = "button1";
             button1.Size = new Size(151, 64);
             button1.TabIndex = 3;
@@ -92,38 +133,18 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(89, 264);
+            pictureBox1.Location = new Point(88, 453);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(327, 36);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ActiveCaption;
-            label3.Location = new Point(21, 75);
-            label3.Name = "label3";
-            label3.Size = new Size(445, 15);
-            label3.TabIndex = 8;
-            label3.Text = "The first time you SWAP, a copy of your RGST DB will be created, and changed into.";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.ActiveCaption;
-            label4.Location = new Point(21, 90);
-            label4.Name = "label4";
-            label4.Size = new Size(394, 15);
-            label4.TabIndex = 9;
-            label4.Text = "After that, each time you press SWAP, the two databases will be swapped.";
             // 
             // Swap
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(473, 326);
+            ClientSize = new Size(473, 517);
             Controls.Add(panel1);
             Name = "Swap";
             Text = "RazorGage Swap Database Context";
@@ -140,7 +161,8 @@
         private PictureBox pictureBox1;
         private Label label2;
         private Label label1;
-        private Label label4;
-        private Label label3;
+        private CheckBox cbPipe;
+        private CheckBox cbRod;
+        private CheckBox cbUnitstrut;
     }
 }
